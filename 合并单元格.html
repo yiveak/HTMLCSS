@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合并单元格</title>
+</head>
+
+<body>
+
+
+    <!-- 跨行合并 rowspan row 行，排-->
+    <div>
+        <p>合并顺序：自上而下，从左至右。</p>
+        <p>删除个数 = 合并个数 - 1</p>
+
+        <table border="1" width="400" height="100">
+            <caption>跨行合并</caption>
+            <tr>
+                <!-- 跨行合并 -->
+                <!-- 删除的个数 = 合并的个数-1 -->
+                <td rowspan="2"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <!-- <td></td> -->
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 跨列合并 colspan column 列，纵队，栏-->
+    <div>
+        <table border="1" width="400" height="100">
+            <caption>跨列合并</caption>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <!-- 跨列合并 -->
+                <td colspan="2"></td>
+                <!-- 删除的个数 = 合并的个数-1 -->
+                <!-- <td ></td> -->
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

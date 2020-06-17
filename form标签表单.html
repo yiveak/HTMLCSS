@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form标签表单</title>
+</head>
+
+<body>
+    <!-- 1. 一个完整的表单：通常由3部分组成 ==== 表单控件(表单元素)、提示信息、表单域 -->
+    <!-- 2. input控件、select、textarea -->
+    <!-- 3. name属性值，用来区分不同的表单元素。实现单选框的单选、复选框的多选 -->
+    <!-- 4. 单选框跟复选框中的checked = "checked"(属性)，即表示为默认选中 -->
+    <!-- 5. 属性value，表示默认显示的文字 -->
+    <form action="demo.php" method="GET">
+        <!-- input, lable经常搭配使用，提高用户体验 -->
+        <!-- type = text 文本框 用户在里面输入任何文字-->
+        用户名：<input type="text" name="username" value="请输入用户名">
+
+        <label for="username">用户名：</label>
+        <input type="text" name="username"  id="username">
+        <br>
+
+        <!-- type = password 密码框 -->
+        密码：<input type="password" name="pwd" id="pwd">
+        <br>
+
+        <!-- type = radio 单选框 -->
+        性别：男 <input type="radio" name="sex"> 女 <input type="radio" name="sex" checked="checked">
+        <br>
+
+        <!-- type = checkbox 复选框 -->
+        爱好：
+        篮球 <input type="checkbox" name="hobby">
+        足球 <input type="checkbox" name="hobby">
+        麻将 <input type="checkbox" name="hobby" checked="checked">
+        <br>
+
+        <!-- type = button 定义可点击的按钮 做某件事情，不作提交信息用，通过JS搭配使用-->
+        <input type="button" value="Click">
+        <input type="button" value="获取短信验证码">
+        <br>
+
+        <!-- type = file 上传文件 -->
+        头像：<input type="file">
+        <br>
+
+        <!-- type = submit 提交：将表单域中表单元素里的值(信息)提交到服务器 -->
+        <input type="submit" value="免费注册">
+        <br>
+
+        <!-- type = reset 重置：清除表单元素里的所有数据 -->
+        <input type="reset" value="重新填写">
+        <br>
+
+        <!-- select 下拉列表表单元素 -->
+        <!-- 使用(属性)selected = "selected" 默认选中 -->
+        地区 
+        <select name="" id="">
+            <option value="">请选择地区</option>
+            <option value="" selected="selected">上海</option>
+            <option value="">南京</option>
+            <option value="">苏州</option>
+            <option value="">无锡</option>
+            <option value="">杭州</option>
+            <option value="">洛阳</option>
+        </select>
+        <br>
+
+        <!-- textarea 文本域 --- 大文本框，使用场景：用户评论、留言 -->
+        <!-- cols="30" 30列，rows="10" 10行 -->
+        评论：<textarea name="" id="" cols="30" rows="10"></textarea>
+    </form>
+</body>
+
+</html>

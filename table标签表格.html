@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table标签表格</title>
+</head>
+<body>
+    <div>
+        <!-- 实际开发中 有个三参为0的概念：border cellspacing cellpadding 均为0 -->
+        <!-- cellspacing 单元格之间的空白距离 -->
+        <!-- cellpadding 单元格内容跟单元格边框的空白距离 -->
+        <table width = "500" border = "1" align = "center" cellspacing ="10" cellpadding = "10">
+            <!-- caption 表格名称 表格标题 -->
+            <caption>个人信息表</caption>
+            <!-- 行 table row-->
+            <tr align = "center"> 
+                <!-- 单元格 -->
+                <!-- 
+                <td>name</td>
+                <td>sex</td>
+                <td>age</td>
+                -->
+                <!-- th table head 表头一般位于表格的第一行或第一列，其文本加粗居中 -->
+                <th>name</th>
+                <th>sex</th>
+                <th>age</th>
+            </tr>
+            <tr>
+                <td>John</td>
+                <td>male</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>female</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>Dasha</td>
+                <td>other</td>
+                <td>30</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>
