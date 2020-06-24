@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见网页布局结构1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top,
+        .banner,
+        .main,
+        .footer {
+            margin: 0 auto 10px;
+            width: 1200px;
+            background-color: rgba(98, 189, 241, 0.877);
+        }
+
+        .top {
+            height: 50px;
+        }
+
+        .banner {
+            height: 100px;
+        }
+
+        .main {
+            height: 900px;
+        }
+
+        .footer {
+            margin-bottom: 0;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一列固定宽度且居中 -->
+    <div class="top">box-top</div>
+    <div class="banner">box-banner</div>
+    <div class="main">box-main</div>
+    <div class="footer">box-footer</div>
+</body>
+
+</html>

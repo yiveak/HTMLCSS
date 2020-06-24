@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 10px auto;
+            height: 300px;
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            /* 如果想让多个盒子在一行显示，那么这些盒子都必须被设置相应的浮动 */
+            /* float: left;  */
+            width: 200px;
+            height: 200px;
+        }
+
+        .box .box1 {
+            background-color: rgb(230, 199, 25);
+        }
+
+        .box .box2 {
+            /* 如果box1, box3未设置浮动，那么box2既未浮动到box1的那一行，而是在box2的当前行浮动*/
+            /* 又因为设置浮动后脱标不占原先的位置，所以box3占据了box2的原位置，即box3在box2的'底部显示' */
+            float: left;
+            background-color: rgb(74, 176, 207);
+        }
+
+        .box .box3 {
+            /* float: left; */
+            height: 300px;
+            background-color: #e4620b;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 浮动跟标准流父级元素搭配使用 -->
+    <div class="box">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+    </div>
+</body>
+
+</html>

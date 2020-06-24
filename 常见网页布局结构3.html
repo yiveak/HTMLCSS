@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见网页布局结构3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .top,
+        .banner,
+        .main,
+        .footer {
+            margin: 0 auto 10px;
+            background-color: rgb(189, 225, 235);
+        }
+
+        .banner,
+        .main {
+            width: 1200px;
+        }
+
+        .top {
+            height: 30px;
+        }
+
+        .banner {
+            height: 80px;
+        }
+
+        .main {
+            height: 800px;
+        }
+
+        .main .top {
+            width: 1200px;
+            height: 200px;
+            background-color: rgba(100, 230, 117, 0.74);
+
+        }
+
+        .main .top li {
+            float: left;
+            margin-right: 10px;
+            width: 292.5px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .main .top .last {
+            margin-right: 0;
+        }
+
+        .main .bottom {
+            margin-bottom: 0;
+            width: 1200px;
+            height: 590px;
+            background-color: rgba(100, 230, 117, 0.74);
+        }
+
+        .main .bottom li {
+            float: left;
+            margin-right: 10px;
+            width: 292.5px;
+            height: 590px;
+            background-color: orange;
+        }
+
+        .main .bottom .last {
+            margin-right: 0;
+        }
+
+        .footer {
+            margin-bottom: 0;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 通栏平均分布型 -->
+    <div>
+        <div class="top">box-top</div>
+        <div class="banner">box-banner</div>
+        <div class="main">
+            <div class="top">
+                <!-- box-main-top -->
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li class="last">4</li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <!-- box-main-bottom -->
+                <ul>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                    <li class="last">d</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">box-footer</div>
+    </div>
+</body>
+
+</html>

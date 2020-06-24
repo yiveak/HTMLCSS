@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .top,
+        .banner,
+        .main,
+        .footer {
+            margin: 0 auto 10px;
+            background-color: orange;
+            width: 1200px;
+        }
+
+        .top {
+            height: 30px;
+        }
+
+        .banner {
+            height: 60px;
+        }
+
+        .main {
+            height: 600px;
+        }
+
+        .main .left {
+            float: left;
+            margin-right: 10px;
+            width: 200px;
+            height: 600px;
+            background-color: rgb(26, 231, 170);
+        }
+
+        .main .right {
+            float: left;
+            width: 990px;
+            height: 600px;
+            background-color: rgb(26, 231, 170);
+        }
+
+        .footer {
+            margin-bottom: 0;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 两列左窄右宽型 -->
+    <!-- eg: mi.com -->
+    <div>
+        <div class="top">box-top</div>
+        <div class="banner">box-left</div>
+        <div class="main">
+            <div class="left">box-main-left</div>
+            <div class="right">box-mian-right</div>
+        </div>
+        <div class="footer">box-footer</div>
+    </div>
+</body>
+
+</html>
