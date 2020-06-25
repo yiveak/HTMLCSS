@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>伪元素选择器使用场3 - 清除浮动</title>
+    <style>
+        /* 方式1. 如果after前面是单冒号，则是为了兼顾低版本的浏览器*/
+        .clearfix::after {
+            /* 伪元素必须有content属性 */
+            content: "";
+            /* 行内的伪元素转换伪块级元素 */
+            display: block;
+            /* 高度为0，无内容，盒子也不可见 */
+            height: 0;
+            /* 清除浮动 */
+            clear: both;
+            /* 设置不可见 */
+            visibility: hidden;
+        }
+
+        /* 方式2. 双伪元素*/
+        .clearfix::before,
+        .clearfix::after {
+            /* 伪元素必须设置content属性，其值可为空 */
+            content: "";
+            /* 以表格的形式显示，为了将创建的before盒子跟after盒子可以在同行显示，闭合浮动 */
+            /* 而如果是block，则after盒子在下一行显示 */
+            display: table;
+        }
+
+        .clearfix::after {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
