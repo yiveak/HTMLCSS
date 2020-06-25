@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位fixed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        .box {
+            position: fixed;
+            /* top: 0; */
+            /* 可以设置为：可视窗口的百分比 */
+            top: 40%;
+            right: 0;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 以浏览器的可视窗口为准， 不管任何祖先元素 -->
+    <!-- 不随着浏览器里网页页面内容的滚动(滚动条)而滚动，是固定的 -->
+    <!-- 固定定位不占有原先的位置 -->
+    <div class="box">
+        <img src="images/pvp.png" alt="">
+    </div>
+</body>
+
+</html>

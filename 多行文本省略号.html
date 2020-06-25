@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多行文本省略号</title>
+    <style>
+        .box {
+            margin: 100px auto;
+            width: 200px;
+            height: 100px;
+            background-color: #ccc;
+
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 有兼容性问题，适合于WebKit浏览器或者移动端 -->
+    <div class="box">
+        行内块/行内元素默认是以文字的基线对齐的
+        行内块/行内元素默认是以文字的基线对齐的
+        行内块/行内元素默认是以文字的基线对齐的
+    </div>
+</body>
+
+</html>

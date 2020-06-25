@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动之overflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            /* overflow清除浮动，溢出隐藏 */
+            overflow: hidden;
+            margin: 50px auto 0;
+            background-color: #eee;
+        }
+
+        .box .box1 {
+            float: left;
+            width: 300px;
+            height: 80px;
+            background-color: darkblue;
+        }
+
+        .box .box2 {
+            float: right;
+            width: 500px;
+            height: 120px;
+            background-color: orange;
+        }
+
+        .next_box {
+            margin: 10px auto 0;
+            height: 100px;
+            background-color: #2a2a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+    </div>
+    <div class="next_box"></div>
+</body>
+
+</html>

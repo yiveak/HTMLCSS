@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝静态轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            /* 因为是标准流盒子，所以通过margin水平居中 相对定位不脱离标准流 */
+            margin: 50px auto;
+            background-color: orange;
+        }
+
+        /* 图片的大小跟盒子大小必须强制固定约束 */
+        .tb-promo img {
+            width: 520px;
+            height: 280px;
+        }
+
+        /* 并集选择器 */
+        .prev,
+        .next {
+            /* 添加绝对定位 子绝父相 给父盒子添加相对定位，同时绝对定位的盒子可以直接设置宽高 */
+            position: absolute;
+            /* 垂直居中 */
+            top: 50%;
+            margin-top: -15px;
+            width: 20px;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            /* 文字水平居中 */
+            text-align: center;
+            background-color: rgba(0, 0, 0, .2);
+            /* 四边都圆了，应该分别设置四个角 */
+            /* border-radius: 15px; */
+
+        }
+
+        .prev {
+            left: 0;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        .next {
+            /* 如果一个盒子既有left属性，又有right属性，那么默认是left属性 */
+            /* 同理，一个盒子如果既有top属性，又有bottom属性，那么默认是top属性 */
+            right: 0;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+
+        /* 小圆点导航 */
+        .promo-nav {
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+            bottom: 15px;
+            width: 70px;
+            height: 13px;
+            line-height: 13px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .promo-nav li {
+            float: left;
+        }
+
+        .promo-nav li a {
+            display: block;
+            width: 8px;
+            height: 8px;
+            margin: 3px 3px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .promo-nav .selected a {
+            background-color: #ff5000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 0. 大盒子 promo 广告 -->
+    <div class="tb-promo">
+
+        <!-- 1. 放一张图片 -->
+        <img src="images/tb.jpg" alt="">
+
+        <!-- 2. 左右2个按钮a链接 左箭头prev 右箭头next position -->
+        <!-- 左侧按钮 -->
+        <a href="#" class="prev">&lt;</a>
+        <!-- 右侧按钮 -->
+        <a href="#" class="next">&gt;</a>
+
+        <!-- 3. 底侧的小圆点 promo-nav ul li -->
+        <ul class="promo-nav">
+            <li class="selected"><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

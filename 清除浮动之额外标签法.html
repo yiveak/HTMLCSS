@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动之额外标签法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: 50px auto 0;
+            background-color: #eee;
+        }
+
+        .box .box1 {
+            float: left;
+            width: 300px;
+            height: 80px;
+            background-color: darkblue;
+        }
+
+        .box .box2 {
+            float: right;
+            width: 500px;
+            height: 120px;
+            background-color: orange;
+        }
+
+        .next_box {
+            margin: 10px auto 0;
+            height: 100px;
+            background-color: #2a2a;
+        }
+
+        .clear {
+            /* 清除左右两侧浮动元素的影响 */
+            clear: both;
+            /* 清除左侧浮动元素造成的影响，注意下面的标准流盒子贴合的顶部是哪个，以及父级盒子的高度以哪个为准 */
+            /* clear: left; */
+            /* 清除右侧浮动元素造成的影响 */
+            /* clear: right; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 缺点：增加多余的无意义元素标签，结构性差 -->
+    <div class="box">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <!-- 额外标签法 -->
+        <!-- 在浮动元素的末尾添加一个空的块级元素标签 -->
+        <div class="clear"></div>
+    </div>
+    <div class="next_box"></div>
+</body>
+
+</html>

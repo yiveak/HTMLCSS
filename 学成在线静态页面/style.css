@@ -1,0 +1,506 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 双伪元素清除浮动 */
+.clearfix:before,
+.clearfix::after {
+    content: "";
+    display: block;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* 页面版心 公共类 */
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+body {
+    background-color: #f3f5f7;
+}
+
+
+/* 1. 头部 */
+.header {
+    height: 42px;
+    margin: 30px auto;
+    /* background-color: orange; */
+}
+
+/* logo */
+.logo {
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+/* 导航nav */
+.nav {
+    float: left;
+    margin-left: 60px;
+}
+
+.nav ul li {
+    float: left;
+    margin: 0 15px;
+}
+
+.nav ul li a {
+    height: 42px;
+    padding: 0 10px;
+    font: 18px/42px "Microsoft Yahei";
+    color: #050505;
+}
+
+.nav ul li a:hover {
+    color: #00a4ff;
+    border-bottom: 2px solid #00a4ff;
+}
+
+/* 搜索框search */
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    margin-left: 70px;
+    /* background-color: lightgreen; */
+}
+
+.search input {
+    float: left;
+    width: 361px;
+    height: 40px;
+    line-height: 42px;
+    font-size: 14px;
+    color: #bfbfbf;
+    text-indent: 1em;
+    border: 1px solid #00a4ff;
+    border-right: none;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 42px;
+    background: url(images/btn.png);
+    /*因为button有个默认边框，所以要去除该边框  */
+    border: none;
+    /* or */
+    /* border: 0; */
+}
+
+/* 用户user */
+.user {
+    float: right;
+    /* 不指定宽度，因为用户名字的字符数不确定 */
+    height: 42px;
+    margin-right: 30px;
+}
+
+.user span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* 2. banner */
+.banner {
+    height: 421px;
+    background-color: #1c036c;
+}
+
+/* banner 版心 */
+.banner .w {
+    height: 421px;
+    background: url(images/banner.png) no-repeat top center;
+}
+
+/* banner的侧导航栏subnav */
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.subnav ul li {
+    height: 45px;
+    line-height: 45px;
+    /* 因为没有给li宽度，所以padding并不会撑开盒子 */
+    padding: 0 20px;
+}
+
+.subnav ul li a {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+}
+
+.subnav ul li a span {
+    float: right;
+}
+
+.subnav ul li a:hover {
+    color: #00a4ff;
+}
+
+/* banner course */
+.course {
+    float: right;
+    /* 浮动的盒子不会有外边距合并的问题 */
+    margin: 60px auto;
+    width: 230px;
+    height: 300px;
+    background-color: #fff;
+}
+
+.course h2 {
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    color: #fff;
+    /* font-weight: 400; */
+    text-align: center;
+    background-color: #9bceea;
+}
+
+.course .bd {
+    padding: 0 20px;
+}
+
+.bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid #a5a5a5;
+    /* background-color: orange; */
+}
+
+.bd ul li h4 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #4e4e4e;
+
+}
+
+.bd ul li p {
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.bd a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 5px;
+    color: #00a4ff;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #00a4ff;
+}
+
+/* 3. 精品推荐模块 */
+.goods {
+    margin-top: 10px;
+    height: 60px;
+    /* 水平居中显示可以被子盒子继承，行高可以被继承 */
+    line-height: 60px;
+    box-shadow: 0px 15px 20px -10px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+}
+
+.goods h3 {
+    float: left;
+    padding: 0 30px;
+    font-size: 16px;
+    color: #00a4ff;
+    /* text-align: center; */
+}
+
+.goods ul {
+    float: left;
+}
+
+.goods ul li {
+    float: left;
+
+}
+
+.goods ul li a {
+    padding: 0 30px;
+    color: #333333;
+    border-left: 1px solid #ccc;
+
+}
+
+.goods .hobby_change {
+    float: right;
+    padding-right: 30px;
+    font-size: 14px;
+    color: #00a4ff;
+}
+
+/* 4. 详细精品模块推荐 */
+.box {
+    margin-top: 30px;
+}
+
+.box_hd,
+.program_module_hd,
+.data_analysis_module_hd,
+.machineLearning_hd {
+    height: 45px;
+    line-height: 45px;
+}
+
+.box_hd h3,
+.program_module_hd h3,
+.data_analysis_module_hd h3,
+.machineLearning_hd h3 {
+    float: left;
+    width: 228px;
+    font-size: 18px;
+    color: #494949;
+}
+
+.box_hd a,
+.program_module_hd a span,
+.data_analysis_module_hd a span,
+.machineLearning_hd a span {
+    float: right;
+    padding-right: 30px;
+    font-size: 12px;
+    color: #bfbfbf;
+}
+
+/* 将父级ul的宽度修改得足够宽，那么li就不掉下去了 */
+.box_bd ul {
+    width: 1225px;
+}
+
+.box_bd li {
+    position: relative;
+    float: left;
+    margin: 0 15px 15px 0;
+    width: 228px;
+    height: 270px;
+    background-color: #fff;
+}
+
+.box_bd li a img,
+.program_module_bd .right .bottom ul li a img,
+.data_analysis_module_bd .right .bottom ul li a img,
+.machineLearning_bd ul li a img {
+    width: 100%;
+}
+
+.box_bd ul li a h4,
+.program_module_bd .right .bottom h4,
+.data_analysis_module_bd .right .bottom ul li a h4,
+.machineLearning_bd ul li a h4 {
+    margin: 15px 20px 15px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.box_bd ul li a .info,
+.program_module_bd .right .bottom a .info,
+.data_analysis_module_bd .right .bottom a .info,
+.machineLearning_bd ul li a .info {
+    margin: 20px 0 20px 25px;
+    color: #cccccc;
+    font-size: 12px;
+}
+
+.box_bd ul li a .info span,
+.program_module_bd .right .bottom a .info span,
+.data_analysis_module_bd .right .bottom a .info span,
+.machineLearning_bd ul li a .info span {
+    color: #ff7c2d;
+}
+
+/* hot图标定位 子绝父相 给祖先元素li添加个相对定位*/
+.box_bd ul li em img {
+    position: absolute;
+    top: 4px;
+    right: -4px;
+}
+
+/* 5. 编程入门模块 */
+.program_module,
+.data_analysis_module,
+.machineLearning {
+    margin-top: 20px;
+}
+
+.program_module_hd .level ul,
+.data_analysis_module_hd .level ul,
+.machineLearning_hd .level ul {
+    float: left;
+    margin-left: 150px;
+}
+
+.program_module_hd .level ul li,
+.data_analysis_module_hd .level ul li,
+.machineLearning_hd .level ul li {
+    float: left;
+    padding: 0 35px;
+
+}
+
+.program_module_hd .level ul li a,
+.data_analysis_module_hd .level ul li a,
+.machineLearning_hd .level ul li a {
+    font-size: 16px;
+    color: #494949;
+}
+
+.program_module_hd .level ul li a:hover,
+.data_analysis_module_hd .level ul li a:hover,
+.machineLearning_hd .level ul li a:hover {
+    color: #00a4ff;
+}
+
+.program_module_bd .left,
+.data_analysis_module_bd .left {
+    float: left;
+    width: 228px;
+    height: 392px;
+}
+
+.program_module_bd .left a img,
+.data_analysis_module_bd .left a img {
+    width: 100%;
+}
+
+.program_module_bd .right .top,
+.data_analysis_module_bd .right .top {
+    float: left;
+    width: 957px;
+    height: 100px;
+    margin: 0 0 12px 15px;
+}
+
+.program_module_bd .right .top a img,
+.data_analysis_module_bd .right .top a img {
+    width: 100%;
+}
+
+.program_module_bd .right .bottom,
+.data_analysis_module_bd .right .bottom {
+    float: left;
+}
+
+.program_module_bd .right .bottom ul,
+.data_analysis_module_bd .right .bottom ul {
+    float: left;
+}
+
+.program_module_bd .right .bottom ul li,
+.data_analysis_module_bd .right .bottom ul li {
+    float: left;
+    width: 228px;
+    height: 268px;
+    margin: 12px 0 0 15px;
+    background-color: #fff;
+}
+
+
+/* 6. 数据分析模块 */
+.data_analysis_module_bd .right .bottom ul li a h4 {
+    margin: 15px 20px 15px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+
+/* 7. 机器学习模块 */
+.machineLearning_bd ul li {
+    float: left;
+    width: 228px;
+    height: 270px;
+    margin-right: 15px;
+    background-color: #fff;
+}
+
+.machineLearning_bd ul .last {
+    margin-right: 0;
+}
+
+
+/* 8. footer */
+.footer {
+    margin-top: 40px;
+    height: 415px;
+    background-color: #fff;
+}
+
+.footer .w {
+    /* 外边距合并 造成塌陷 */
+    /* margin-top: 35px; */
+    /* 所以应该使用padding */
+    padding-top: 35px;
+}
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    margin: 20px 0 15px 0;
+    font-style: 12px;
+    color: #666;
+}
+
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 35px;
+    line-height: 35px;
+    color: #00a4ff;
+    text-align: center;
+    border: 1px solid #00a4ff;
+
+    /* background-color: green; */
+}
+
+.links {
+    float: right;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.links dl dd a {
+    font-size: 12px;
+    color: #333333;
+}

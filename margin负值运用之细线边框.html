@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin负值运用之细线边框</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            margin: 50px auto;
+        }
+        ul li {
+            position: relative;
+            float: left;
+            list-style: none;
+            width: 100px;
+            height: 100px;
+            /* 通过margin-left: -2px 得到2px的边框*/
+            margin-left: -2px;
+            border: 2px solid orange;
+        }
+        li:hover {
+            /* 方式1. 如果该盒子未设置定位，那么可以通过将盒子改成相对定位，让盒子的四边显示，因为相对定位的盒子脱标 */
+            /* position: relative; */
+            /* 方式2. 如果盒子有定位，则通过z-index来提高 */
+            z-index: 2;
+            border-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</body>
+</html>
