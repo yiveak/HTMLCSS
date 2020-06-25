@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡之进度条案例</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .bar {
+            width: 300px;
+            height: 20px;
+            margin: 100px auto;
+            border-radius: 10px;
+            ;
+            border: 1px solid red;
+            padding: 0.5px;
+        }
+
+        .bar_in {
+            width: 25%;
+            height: 100%;
+            background-color: red;
+            border-radius: 10px;
+
+        }
+
+        .bar:hover .bar_in {
+            width: 100%;
+            transition: width .7s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bar">
+        <div class="bar_in"></div>
+    </div>
+</body>
+
+</html>
