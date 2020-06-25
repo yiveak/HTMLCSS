@@ -458,7 +458,7 @@ CSS属性书写顺序(重点)：
     border-bottom-color: orange;
 }
 
-/* 直角三角形 */
+/* 等腰直角三角形 */
 .box {
     width: 0;
     height: 0;
@@ -490,14 +490,104 @@ CSS属性书写顺序(重点)：
 >
 >    > `outline: none;` ，比如 `input`、`textarea`
 >    >
->    > ```css
->    > .input,
->    > .textarea {
+>    > ``` css
+>    > /* 取消表单轮廓 */
+>    > input,
+>    > textarea {
 >    >     outline: none;
 >    > }
 >    > ```
+>
+> 3. **防止文本域拖拽 resize**
+>
+>    > ```css
+>    > textarea {
+>    >     resize: none;
+>    > }
+>    > ```
+>
+> 4. **`vertical-align`**
+>
+>    > 常用于设置，图片或者表单(行内元素)和文字垂直对齐。(只针对行内元素、行内块元素)。
 >    >
+>    > ```css
+>    > vertical-align: baseline(基线) | top(顶线) | middle(中线，常用) | bottom(底线)
 >    > 
+>    > /* 常见搭配使用 */
+>    > selector {
+>    >     display: inline-block;
+>    >     vertical-align: middle;
+>    > }
+>    > ```
+>    >
+>    > 且，可以解决图片底部的空白缝隙，因为**行内块/行内元素默认是以文字的基线对齐的**。
+>    >
+>    > * 方式1，通过给图片设置 `vertical-align` 属性，其取值四个皆可。(推荐)
+>    > * 方式2， 给图片设置 `display: block;` ，因为块级元素不以文字的基线对齐。
+>
+> 5. **溢出的文字由省略号代替** ---- 后台更方便控制
+>
+>    > 1. **单行文本溢出，显示省略号**
+>    >
+>    >    > 必须先满足3个条件：
+>    >    >
+>    >    > ```css
+>    >    > /* 1. 先强制一行内显示文本 默认normal，即自动换行*/
+>    >    > white-space: nowrap;
+>    >    > /* 2. 超出部分隐藏 */
+>    >    > overflow: hidden;
+>    >    > /* 3. 超出文字用省略号代替 */
+>    >    > text-overflow: ellipsis;
+>    >    > ```
+>    >
+>    > 2. **多行文本溢出，显示省略号**
+>    >
+>    >    > ```css
+>    >    > overflow: hidden;
+>    >    > text-overflow: ellipsis;
+>    >    > /* 弹性伸缩盒子模型显示 */
+>    >    > display: -webkit-box;
+>    >    > /* 限制在一个块元素显示的文本的行数 省略号在哪行的意思*/
+>    >    > -webkit-line-clamp: 2;
+>    >    > /* 设置或检索伸缩盒对象的子元素的排列方式 */
+>    >    > -webkit-box-orient: vertical;
+>    >    > ```
+>    >    >
+>    >    > 兼容性问题，适合移动端，即WebKit内核
 
 
+
+#### 常见布局技巧
+
+>  1. **margin负值的运用**
+>
+>     > float AB两个盒子，A盒子的左边框跟B盒子的右边框重叠，其值变为2px(假设边框1px)，那么如何使得重叠的边框为1px？
+>     >
+>     > 即，让B盒子多向左magrin -1px的距离，则得到细线边框。
+>
+>  2. **文字围绕浮动元素**
+>
+>     > `float` 
+>
+>  3. **行内块的巧妙运用**
+>
+>     > 页码 (给该行内块的父盒子添加t`text-align: center;` ，那么其中的盒子自然而然的居中对齐了)
+>     >
+>     > 行内块本身就有大小，且之间有距离
+>
+>  4. **CSS三角强化**
+>
+>     > 直角三角形(一条直角边长，一条直角边短)
+>     >
+>     > ```css
+>     > .box {
+>     > 	width: 0;
+>     > 	height: 0;
+>     > 	line-height: 0;
+>     > 	font-size: 0;
+>     > 	border-color: transparent orange transparent transparent;
+>     > 	border-style: solid;
+>     > 	border-width: 24px 10px 0 0;
+>     > }
+>     > ```
 
