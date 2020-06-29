@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子垂直水平居中 - 方法5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outerBox {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            background-color: #ff5000;
+        }
+
+        .innerBox {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            background-color: #002451;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 父盒子 display: flex; -->
+    <!-- 子盒子 margin: auto; -->
+    <!-- 无需定位盒子 -->
+    <div class="outerBox">
+        <div class="innerBox"></div>
+    </div>
+</body>
+
+</html>

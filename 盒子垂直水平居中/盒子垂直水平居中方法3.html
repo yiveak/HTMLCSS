@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子垂直水平居中 - 方法</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outerBox {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff5000;
+        }
+
+        .innerBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            transform: translate(-50%, -50%);
+            background-color: #002451;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 无需关心子盒子的宽高 -->
+    <!-- transform.translate(x, y) -->
+    <!-- 子绝父相 定位盒子 top:50% left:50% transform.translate(-50%, -50%) -->
+    <div class="outerBox">
+        <div class="innerBox"></div>
+    </div>
+</body>
+
+</html>

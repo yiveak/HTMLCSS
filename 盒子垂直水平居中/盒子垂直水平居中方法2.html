@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子垂直水平居中 - 方法2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outerBox {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff5000;
+        }
+
+        .innerBox {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background-color: #002451;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- margin:auto -->
+    <!-- 子盒子 子绝父相，top: 0; right: 0; left: 0; bottom: 0; margin:auto; -->
+    <div class="outerBox">
+        <div class="innerBox"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒子垂直水平居中 - 方法1</title>
+    <style>
+        .outerBox {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-color: #ff5000;
+        }
+
+        .innerBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: #002451;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 已知盒子的宽高 -->
+    <!-- 子绝父相 -->
+    <!-- 子盒子top:50%, left:50%, margin-left:负的子盒子自身宽度的一半，margin-top:负的子盒子自身高度的一半 -->
+    <div class="outerBox">
+        <div class="innerBox"></div>
+    </div>
+</body>
+
+</html>
