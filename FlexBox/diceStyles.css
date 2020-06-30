@@ -1,0 +1,109 @@
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #222, #333);
+}
+
+.dice {
+    display: flex;
+    width: 104px;
+    height: 104px;
+    margin: 16px;
+    padding: 4px;
+    background-color: #eee;
+    box-shadow:
+        inset 0 5px #fff,
+        inset 0 -5px #bbb,
+        inset 5px 0 #ddd,
+        inset -5px 0 #bbb;
+    border-radius: 10%;
+}
+
+.items {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 4px;
+    background-color: #333;
+    border-radius: 50%;
+    box-shadow: inset 0 3px #111, inset -3px 0 #333;
+}
+
+/* 1点 */
+.diceOne {
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2点 */
+.diceTwo {
+    /* border: 1px solid orange; */
+    justify-content: space-between;
+}
+
+/* 注意伪类选择器怎么选的 中间是空格 */
+.diceTwo .items:nth-child(2) {
+    align-self: flex-end;
+}
+
+/* 3点 */
+.diceThree {
+    justify-content: space-between;
+}
+
+/* 伪元素选择器 从1计数*/
+.diceThree .items:nth-child(2) {
+    align-self: center;
+}
+
+.diceThree .items:nth-child(3) {
+    align-self: flex-end;
+}
+
+/* 4点 6点 */
+.diceFour,
+.diceSix {
+    justify-content: space-between;
+}
+
+.diceFour .column,
+.diceSix .column {
+    /* border: 1px solid orange; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 5点 */
+.diceFive {
+    justify-content: center;
+}
+
+.diceFive .column:nth-child(2n+1) {
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.diceFive .column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

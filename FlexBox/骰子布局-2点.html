@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰子布局 - 2点</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: inherit;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to top left, #eee, #222);
+        }
+
+        .container {
+            display: flex;
+
+            /* 1. 一个居于左顶部，一个居于右顶部 */
+            /* 项目 通过justify-content在main-axis方向上设置 */
+            /* space-between：两端对齐，项目之间的间隔都相等。 */
+            /* justify-content: space-between; */
+
+            /* 2. 一个左上，一个左下 */
+            /* 项目 通过flex-direction设置 */
+            /* flex-direction属性决定主轴的方向（即项目的排列方向） */
+            /* column表示在纵向，从上至下 */
+            /* flex-direction: column; */
+            /* 且在纵向上，使得项目两端对齐 */
+            /* justify-content: space-between; */
+
+            /* 3. 一个顶部中，一个底部中 */
+            /* flex-direction: column; */
+            /* justify-content: space-between; */
+            /* align-items: center; */
+
+            /* 4. 一个右上，一个右下 */
+            /* flex-direction: column; */
+            /* justify-content: space-between; */
+            /* align-items: flex-end; */
+
+            margin: 15px;
+            padding: 4px;
+            width: 104px;
+            height: 104px;
+            background-color: #e7e7e7;
+            /* object-fit: contain; */
+            box-shadow:
+                inset 0 3px white,
+                inset 0 -5px #bbb,
+                inset 5px 0 #d7d7d7,
+                inset -5px 0 #d7d7d7;
+            border-radius: 10%;
+        }
+
+        .items {
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin: 4px;
+            background-color: #333;
+            border-radius: 50%;
+            box-shadow: inset 0 3px #111, inset 0 -3px #555;
+        }
+
+        /* 5. 一个左上，一个垂直居中 */
+        /* 伪类选择器 :nth-child(an+b) */
+        /* .items:nth-child(2) { */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* wrong */
+
+        /* align-self: center; */
+        /* } */
+
+        /* 6. 一个左上，一个右下，对角线*/
+        .container {
+            display: flex;
+            /* 两端对齐 */
+            justify-content: space-between;
+        }
+
+        .items:nth-child(2) {
+            /* align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。*/
+            /* 默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。*/
+            /* 让第二个项目'掉下来'，以cross-end对齐 */
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="items"></span>
+        <span class="items"></span>
+    </div>
+
+</body>
+
+</html>

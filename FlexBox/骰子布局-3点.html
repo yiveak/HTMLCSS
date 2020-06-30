@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰子布局 - 3点</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: inherit;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, orange, yellow);
+        }
+
+        .container {
+            display: flex;
+            /* 两端对齐 */
+            justify-content: space-between;
+            width: 104px;
+            height: 104px;
+            margin-top: 15px;
+            padding: 4px;
+            background-color: #e7e7e7;
+            box-shadow:
+                inset 0 5px white,
+                inset 0 -5px #bbb,
+                inset 5px 0 #d7d7d7,
+                inset -5px 0 #d7d7d7;
+            border-radius: 10%;
+        }
+
+        .items {
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin: 4px;
+            background-color: #333;
+            border-radius: 50%;
+            box-shadow: inset 0 3px #111, inset 0 -3px #555;
+        }
+
+        /* 对角线 */
+        .items:nth-child(2) {
+            align-self: center;
+        }
+
+        .items:nth-child(3) {
+            align-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="items"></span>
+        <span class="items"></span>
+        <span class="items"></span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰子布局 - 1点</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* CSS linear-gradient() 函数用于创建一个表示两种或多种颜色线性渐变的图片。*/
+            /* 其结果属于<gradient>数据类型，是一种特别的<image>数据类型。 */
+            /* 渐变方向：向上渐变，颜色渐变：从#ff5000到orange */
+            background: linear-gradient(to top, #ff5000, orange);
+        }
+
+        .container {
+            /* 项目默认在flex container的左上角 */
+            display: flex;
+            /* 项目main-axis方向上居中 */
+            justify-content: center;
+            /* 项目main-axis方向上以main-end对齐 */
+            justify-content: flex-end;
+
+            /* 左居中 */
+            justify-content: flex-start;
+            /* 项目在cross-axis方向上居中 */
+            align-items: center;
+
+            /* 垂直居中 */
+            justify-content: center;
+            align-items: center;
+
+            /* 右居中 */
+            justify-content: flex-end;
+            align-items: center;
+
+            /* 左下 */
+            /* 项目 main-axis方向上 main-start起 */
+            justify-content: flex-start;
+            /* 项目 cross-axis方向上 cross-end起 */
+            align-items: flex-end;
+
+            /* 底部居中 */
+            justify-content: center;
+            align-items: flex-end;
+
+            /* 右下 */
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            margin: 16px;
+            padding: 4px;
+
+            background-color: #e7e7e7;
+            width: 104px;
+            height: 104px;
+            /* object-fit CSS 属性指定可替换元素的内容应该如何适应到其使用的高度和宽度确定的框。 */
+            /* contain：被替换的内容将被缩放，以在填充元素的内容框时保持其宽高比。*/
+            /* 整个对象在填充盒子的同时保留其长宽比，因此如果宽高比与框的宽高比不匹配，该对象将被添加“黑边”。 */
+            object-fit: contain;
+
+            box-shadow:
+                inset 0 5px white,
+                inset 0 -5px #bbb,
+                inset 5px 0 #d7d7d7,
+                inset -5px 0 #d7d7d7;
+
+            border-radius: 10%;
+        }
+
+        .item {
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin: 4px;
+            background-color: #333;
+            border-radius: 50%;
+            box-shadow: inset 0 3px #111, inset 0 -3px #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="item"></span>
+    </div>
+</body>
+
+</html>
